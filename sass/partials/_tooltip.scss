@@ -1,0 +1,126 @@
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin: 100px;
+
+.tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip-content {
+  position: relative;
+  display: block;
+  background-color: #fff;
+   border: 1px solid #1173D5;
+  color: #333;  
+  border-radius: 12px;
+  font-size: 16px;
+  z-index: 1;
+  top: -75px;
+  left: 90px;;
+  width: 329px; 
+
+  .text-section {
+    padding: 16px;
+
+    h5 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (max-width: 600px) { 
+    top: 20px;
+    left: -95px;
+    width: 280px;
+  }
+}
+
+&:hover .tooltip-content {
+  display: block;
+}
+
+.tooltip-arrow-inside {
+  height: 40px;
+    position: absolute;
+    top: 47px;
+    left: -1px;
+    border: 1px solid #fff;
+    background: #fff;
+    z-index: 11111;
+
+    &::before {     
+      content: "";
+    position: absolute;
+    width: 28px;
+    left: -32px;
+    top: -18px;
+    height: 32px;
+    border: solid 1px #1173D5;
+    border-color: #1173D5 transparent transparent transparent;
+    border-radius: 50%/0px 20px 0px 0px;
+    z-index: -11111;
+    transform: rotate(90deg);
+    }
+
+    &::after {  
+      content: "";
+    position: absolute;
+    width: 26px;
+    left: -30px;
+    top: 22px;
+    height: 30px;
+    border: solid 1px #1173D5;
+    border-color: #1173D5 transparent transparent transparent;
+    border-radius: 50%/20px 0px 0px 0px;
+    z-index: -11111;
+    transform: rotate(90deg);
+  
+    }
+    @media screen and (max-width: 600px) { 
+      transform: rotate(90deg);
+      left: 125px;
+      top: -21px;
+    }
+}
+  .tooltip-arrow {
+    //position: absolute;
+    // width: 18px;
+    // height: 18px;
+    // top: 56px;
+    // left: -13px;
+    // border-radius: 10% 6% 60% 6%;
+    // border-top: 1px solid #fff;
+    // border-right: 1px solid #1173D5;
+    // border-left: 1px solid #fff;
+    // border-bottom: 1px solid #1173D5;
+    // transform-origin: center;
+
+
+    position: absolute;
+    width: 16px;
+    left: -13px;
+    top: 58px;
+    height: 15px;
+    border: solid 1px #1173D5;
+    border-color: #1173D5 transparent transparent #1173D5;
+    border-radius: 55% 0% 0% 0%;
+    transform-origin: center;
+    transform: rotate(-45deg);
+    background: #fff;
+    z-index: -11111;
+
+    @media screen and (max-width: 600px) { 
+          top: -13px;
+          left: 119px;
+          width: 14px;
+          height: 14px;
+          transform: rotate(45deg);
+    }
+    
+  }
+
+}
+
+
+

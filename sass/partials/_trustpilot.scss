@@ -1,0 +1,110 @@
+.trustpilot-section {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    gap: 24px; 
+    
+
+    .important-cover {
+        padding: 0 20px;
+
+        p {
+            font-family: Open Sans;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 160%; 
+            width: 811px;            
+
+            @media screen and (max-width: 1024px) { 
+                width: 100%;
+            }
+
+            span {
+                font-family: Ciutadella Rounded;
+                font-size: 35px;
+                font-weight: 500;
+                line-height: 110%;
+                color: #522367;                
+
+                @media screen and (max-width: 600px) { 
+                    font-size: 26px; 
+                }
+            }            
+
+        }
+
+        .back-icn {
+            font-size: 24px;          
+        }
+        .back-sec {
+            display: flex;
+            gap: 8px;  
+            align-items: center;          
+            font-family: Ciutadella Rounded;
+            font-size: 23px;
+            font-weight: 500;
+            line-height: 110%;
+            color: #522367;
+            padding: 15px 0;
+            border-radius: 8px; 
+           
+            .back-btn {
+                text-decoration: none;
+                color: #522367;
+
+                &:hover {
+                    text-decoration: underline;
+                }             
+            }
+            
+            &:focus {                
+                border: 3px solid #1173D5; 
+                padding: 15px 36px;               
+            }
+            &.disabled {
+                opacity: 0.56; 
+                pointer-events: none;
+            }
+        } 
+        
+    }
+
+    .trustpilot-widget {
+        padding: 0 20px;
+
+        .ss004-trustpilot {
+            text-decoration: none;
+            font-family: Open Sans;
+            color: #191919;
+
+            .ss004-trustpilot__logo {
+                width: 114px;
+                margin-bottom: 9px;
+            }
+
+            .ss004-trustpilot__text {
+                    margin-top: 9px;
+                p {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    line-height: 20px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) { 
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) { 
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1025px) { 
+        width: 1440px;
+    }
+}

@@ -1,0 +1,57 @@
+$radio-default: #DBDDDD;
+$radio-hover: #1173D5;
+$radio-clicked: #ECF7FF;
+$radio-disabled: #DBDDDD;
+$radio-focused: #F7F6F6;
+$radio-text: #1173D5;
+$radio-border:#1173D5;
+$radio-focus:#1173D5;
+$white: #fff;
+$radio-disabled-color: #4D5154;
+
+.radiobtn {  
+   display: inline-block;
+   width: 259px;
+   height: 80px;
+   position: relative;
+ 
+   label {
+       display: flex;
+       background: $white;
+       color: $radio-text;
+       border-radius: 12px;
+       padding: 10px 16px;
+       border: 2px solid $radio-default;
+       gap: 8px;
+       justify-content: space-evenly;
+       cursor: pointer;
+       font-family: Ciutadella Rounded; 
+       font-size: 24px;
+       line-height: 160%;
+       align-items: center;                      
+   
+       &:hover {
+           border-color: $radio-hover;
+       }
+       &.disabled {
+           background: $radio-disabled;
+           color: $radio-disabled-color;
+           pointer-events: none;
+       }
+       &:focus {
+           background: $radio-focused;
+           border: 4px solid $radio-focus;
+       }
+   }
+   input[type="radio"] {
+       display: none;
+       position: absolute;
+       width: 100%;
+       appearance: none;
+       &:checked + label {
+           background: $radio-clicked;			
+           border-color: $radio-border;		
+           
+       }
+   }
+}

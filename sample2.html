@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>jQuery UI Datepicker - Select a Date Range</title>
+    <link rel="stylesheet" href="./css/input.css">
+    
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+    <script src="./js/jquery-ui.js"></script>
+   
+    <!--SANKA-->
+     <style>
+       
+    </style>
+    <!--SANKA-->
+    
+    <script>   
+
+
+        $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          //defaultDate: "+7",         
+          numberOfMonths: 1,
+          changeMonth: true,
+          changeYear: true,
+          showOtherMonths: true,
+          selectOtherMonths: true,
+          altField: '#datepicker_from',
+          altFormat: "dd/mm/yy",
+          beforeShowDay: highlightRange,//SANKA
+          firstDay: 1
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+          startDate = getDate( this );$("#from, #to").datepicker("refresh");//SANKA
+        }),
+      to = $( "#to" ).datepicker({
+        //defaultDate: "+1D",        
+        numberOfMonths: 1,
+        changeMonth: true,
+        changeYear: true,
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        altField: '#datepicker_to',
+        altFormat: "dd/mm/yy",
+        beforeShowDay: highlightRange,//SANKA
+        firstDay: 1,
+        
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+        endDate = getDate( this );$("#from, #to").datepicker("refresh");//SANKA
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  
+  //SANKA
+            var startDate;
+            var endDate;
+
+            function highlightRange(date) {
+                if (startDate && endDate && date > startDate && date < endDate) {
+                    return [true, "selected-range"];
+                }
+                return [true, ""];
+            }
+//SANKA            
+
+
+    
+  } );
+
+
+        </script>
+      </head>
+      <body>
+       
+      <!-- Date: <div id="datepicker" class="sts-datepicker"></div> -->
+
+      <!-- <label for="from">From</label>
+<input type="text"  id="from" name="from">
+<label for="to">to</label>
+<input type="text" id="to" name="to"> -->
+<div class="container-wrapper-sm">
+<div class="datepicker-sec">
+  
+  <div id="from" class="sts-datepicker">
+    <div class="datepicker-label"> Departure date </div>
+    <input type="text"  id="datepicker_from" name="from1" class="depart-date" placeholder="dd/mm/yyyy">
+  </div> 
+  
+  
+  <div id="to" class="sts-datepicker">
+    <div class="datepicker-label"> Return date  </div>
+    <input type="text"  id="datepicker_to" name="to" class="return-date" placeholder="dd/mm/yyyy">
+  </div>
+  
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

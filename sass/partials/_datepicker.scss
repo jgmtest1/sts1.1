@@ -1,0 +1,252 @@
+$icomoon-font-path: "../assets/fonts/icomoon";
+$icomoon-font-family: "icomoon" !default;
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #717376;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #717376;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #717376;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #717376;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:    #717376;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+    color:    #717376;
+}
+
+
+.datepicker-sec {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    margin-bottom: 70px;
+
+    @media screen and (max-width: 768px) { 
+        flex-direction: column;
+        gap: 58px;
+    }
+
+.sts-datepicker {
+    display: inline-block;    
+    font-family: 'Open Sans';
+    font-size: 13px;
+    position: relative;
+
+    .datepicker-label {
+        font-family: Ciutadella Rounded;
+        font-size: 28px;        
+        font-weight: 500;
+        line-height: 110%;
+        color: #522367;
+        padding-bottom: 14px;
+    }
+   
+    .depart-date, .return-date {
+        width: 100%;
+        position: absolute;
+        bottom: -48px;
+        border: 1.5px solid #DBDDDD;
+        border-radius: 8px;
+        height: 40px;
+        padding: 10px 0px 10px 16px;
+       
+
+        @media screen and (max-width: 768px) { 
+            width: 27em;
+        }        
+        
+    }
+   
+
+.ui-datepicker {
+    //width: 314px;
+    //height: 279px;
+    border: 1.5px solid #DBDDDD;
+
+.ui-datepicker-header {
+    
+    background: transparent;
+    border: none;
+    margin: 0 15px 0 5px;
+ 
+    .ui-datepicker-prev, .ui-datepicker-prev-hover{        
+        left: 80%;
+        border-color: transparent;
+        background: transparent;
+        border: none;
+    }
+    
+    .ui-datepicker-title {
+        margin: 0 2.3em;
+        line-height: 1.8em;
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
+        position: relative;
+        left: -20px;
+
+        .ui-datepicker-month, .ui-datepicker-year {
+            background: transparent;
+            border: 1px solid #DBDDDD;
+            padding: 0px 8px;
+            border-radius: 4px;
+            width: 80px;
+            height: 32px;
+            font-family: 'Open Sans';
+            font-size: 13px;
+            background: url("../assets/image/chevron-down.svg") no-repeat 92% center;
+            background-size: 16px;
+            -moz-appearance:none; /* Firefox */
+            -webkit-appearance:none; /* Safari and Chrome */
+            appearance:none;              
+        }             
+        
+    }
+
+    .ui-datepicker-next, .ui-datepicker-next-hover { 
+        border-color: transparent;
+        background: transparent;
+    }
+
+    .ui-datepicker-next, .ui-datepicker-prev { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: revert;
+        height: revert;
+        top: 0;
+        bottom: 0;
+        right: -5px;
+        border: none;
+
+        &::after {
+            content: "\e91b";
+            font-family: $icomoon-font-family;  
+            font-size: 16px;
+            font-weight: 500;   
+            color: #212427;      
+           }
+
+        span {
+            background-image: none;           
+        }
+    }
+
+    .ui-datepicker-prev {        
+
+        &::after {
+            content: "\e91a";                   
+           }       
+        }   
+
+        }
+    }
+    .ui-widget-content {
+        border-radius: 8px;
+        padding: 16px 29px 13px;
+        width: 314px;
+
+        .ui-datepicker-calendar {
+           // width:120px;
+            margin: 0 auto;
+        }
+
+        .ui-datepicker-calendar {          
+            
+            a, span {
+                font-family: 'Open Sans';
+                color: #212427;
+                border: none;
+                background: transparent;
+                padding: 0 6px;
+                line-height: 160%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                display: flex;   
+                gap:24px;
+                font-weight: 400;              
+              }
+
+              .ui-state-default {  
+                color: #212427;
+              }
+              .ui-priority-secondary {
+                color: #DBDDDD;
+                opacity: 1;
+              }
+              
+          .ui-datepicker-current-day {
+            background: #522367;
+            border-radius: 8px;
+            position: relative;
+            z-index: 11111111;
+            display: block;
+            
+              .ui-state-active {
+                // background: #522367;
+                // border-radius: 8px;
+                 color: #fff;                
+              }
+              
+
+            }          
+
+            tr {        
+
+                td {                    
+                    height: 32px;
+                    width: 32px;   
+                    padding: 0;     
+                    
+                    a {
+                        position: relative;
+                        z-index: 1111;
+                    }
+                }
+            }
+
+            .selected-range {
+                    // background: #e9dcf5; 
+                    position: relative; 
+                a {
+                    &::before {
+                        content: '';
+                        width: calc(100% + 6px);
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 5px;
+                        background: #E9DCF5;
+                        z-index: -1;                      
+                      }  
+
+                      &::after {
+                        content: '';
+                        width: calc(100% + 6px);
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: -10px;
+                        background: #E9DCF5;
+                        z-index: -1;                      
+                      } 
+                    }
+                                                                                            
+                } 
+            
+            }
+
+        }
+
+    }
+
+}
